@@ -3,15 +3,56 @@
   <head>
     <meta charset="utf-8">
     <title>Justin Liu</title>
+    <style>
+      html {
+        height: 100%;
+      }
+      body {
+        font-family: Helvetica;
+        text-align: center;
+        min-height: 100%;
+        background-color: #222;
+        color: white;
+      }
+      h1 {
+        font-size: 10vw;
+        margin-bottom: -3vw;
+      }
+      h2 {
+        font-size: 2vw;
+      }
+      a {
+        color: white;
+      }
+      p {
+        margin-top: -10px;
+      }
+      p:first-child {
+        margin-top: 0px;
+      }
+    </style>
   </head>
-  <body>
-    <h1>Justin Liu </h1>
-    <h2>I'm currently building my new website, just hold on tight until I'm done!</h2>
-    <ul>
-      <li><a target="_blank" href = Resume.pdf>RESUME</a></li>
-      <li><a target="_blank" href = "https://www.linkedin.com/in/justinliu98">LINKEDIN</a></li>
-      <li><a target="_blank" href = "https://www.behance.net/justinliu">PORTFOLIO</a></li>
-      <li><a target="_blank" href = "https://github.com/jl98">GITHUB</a></li>
-    </ul>
+  <body id = "outer">
+    <div id = "content">
+      <h1>Justin Liu </h1>
+      <h2>I'm currently building my new website, just hold on tight until I'm done!</h2>
+      <div>
+        <p><a target="_blank" href = Resume.pdf>Resume</a></p>
+        <p><a target="_blank" href = "https://www.linkedin.com/in/justinliu98">LinkedIn</a></p>
+        <p><a target="_blank" href = "https://www.behance.net/justinliu">Porfolio</a></p>
+        <p><a target="_blank" href = "https://github.com/jl98">Github</a></p>
+      </div>
+    </div>
   </body>
+  <script>
+    const container = document.getElementById('outer');
+    const pageContent = document.getElementById('content');
+    const contentHeight = pageContent.offsetHeight;
+
+    container.style.height = window.innerHeight;
+    container.style.width = window.innerWidth;
+    const containerHeight = container.offsetHeight;
+
+    pageContent.style.marginTop = ((containerHeight - contentHeight) / 2) + 'px';
+  </script>
 </html>
